@@ -23,9 +23,9 @@ func get_version(url string) string {
 	return string(contents)
 }
 
-
 func main() {
-	actualVersion := get_version("https://trust1.my.intapp.com/time/mobile")
+	envUrl := os.Getenv("URL")
+	actualVersion := get_version(envUrl)
 	log.Println("Actual version is " + actualVersion)
 }
 
