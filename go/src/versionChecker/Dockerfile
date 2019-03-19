@@ -1,8 +1,8 @@
 # Compile stage
 FROM golang:1.10.1-alpine3.7 AS build-env
 ENV CGO_ENABLED 0
-ADD . /go/src/hello
-RUN go build -o /server hello
+ADD . /go/src/versionChecker
+RUN go build -o /server versionChecker
 
 # Final stage
 FROM alpine:3.7
